@@ -1073,7 +1073,7 @@ def engulf_existing_cluster(**kwargs):
     search = __utils__['deepsea_minions.show']()
     local = salt.client.LocalClient()
     settings = Settings()
-    salt_writer = SaltWriter(**kwargs)
+    salt_writer = SaltWriter(overwrite=True)
     exception = kwargs['exception'] if 'exception' in kwargs else False
 
     # Make sure deepsea_minions contains valid minions before proceeding with engulf.
